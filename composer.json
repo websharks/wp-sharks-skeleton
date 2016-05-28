@@ -1,0 +1,49 @@
+{
+  "name": "websharks/wp-sharks-skeleton",
+  "homepage": "https://github.com/websharks/wp-sharks-skeleton",
+  "description": "WP Sharks™ plugin skeleton.",
+  "keywords": ["websharks", "wpsharks", "skeleton"],
+
+  "type": "project",
+  "license": "GPL-3.0+",
+
+  "authors": [{
+    "name": "websharks",
+    "homepage": "http://websharks-inc.com/",
+    "role": "company"
+  }, {
+    "name": "jaswsinc",
+    "homepage": "http://jaswsinc.com/",
+    "role": "developer"
+  }, {
+    "name": "raamdev",
+    "homepage": "http://raam.org/",
+    "role": "developer"
+  }],
+
+  "support": {
+    "source": "https://github.com/websharks/wp-sharks-skeleton",
+    "issues": "https://github.com/websharks/wp-sharks-skeleton/issues"
+  },
+
+  "require-dev": {},
+
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+
+  "autoload": {
+    "psr-4": {
+      "WebSharks\\WpSharks\\Skeleton\\Classes\\": "src/includes/classes",
+      "WebSharks\\WpSharks\\Skeleton\\Functions\\": "src/includes/functions",
+      "WebSharks\\WpSharks\\Skeleton\\Interfaces\\": "src/includes/interfaces",
+      "WebSharks\\WpSharks\\Skeleton\\Traits\\": "src/includes/traits"
+    }
+  },
+
+  "config": {
+    "vendor-dir": "src/vendor",
+    "preferred-install": "dist"
+  },
+
+  "repositories": []
+}
