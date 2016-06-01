@@ -36,7 +36,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '160528.12337'; //v//
+    const VERSION = '160601.63311'; //v//
 
     /**
      * Constructor.
@@ -55,20 +55,32 @@ class App extends SCoreClasses\App
                 ],
             ],
 
-            '©brand' => [
-                '©text_domain' => '',
-                '©slug'        => '',
-                '©var'         => '',
-                '©name'        => '',
-                '©acronym'     => '',
-                '©prefix'      => '',
-
-                '§domain'      => '',
-                '§domain_path' => '',
+            '§specs' => [
+                /*
+                    '§is_pro'          => false,
+                    '§in_wp'           => false,
+                    '§is_network_wide' => false,
+                    '§type'            => '',
+                    '§file'            => '',
+                */
             ],
 
-            '§default_options' => [],
+            '©brand' => [
+                /*
+                    '©text_domain' => '',
+                    '©slug'        => '',
+                    '©var'         => '',
+                    '©name'        => '',
+                    '©acronym'     => '',
+                    '©prefix'      => '',
+
+                    '§domain'      => '',
+                    '§domain_path' => '',
+                */
+            ],
+
             '§pro_option_keys' => [],
+            '§default_options' => [],
 
             '§conflicts' => [
                 '§plugins' => [
@@ -139,15 +151,6 @@ class App extends SCoreClasses\App
                         ],
                     */
                 ],
-            ],
-
-            '§notices' => [
-                '§on_install' => function (array $installion_history) {
-                    return [
-                        'is_transient' => true,
-                        'markup'       => sprintf(__('<strong>%1$s</strong> v%2$s installed successfully.', 'wp-sharks-skeleton'), esc_html($this->Config->©brand['©name']), esc_html($this::VERSION)),
-                    ];
-                },
             ],
         ];
         parent::__construct($instance_base, $instance);
