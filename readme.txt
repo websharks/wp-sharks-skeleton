@@ -1,6 +1,6 @@
 === Skeleton ===
 
-Stable tag: 160624.34776
+Stable tag: 160624.36295
 
 Tested up to: 4.5.3
 Requires at least: 4.5.3
