@@ -25,7 +25,7 @@ use function get_defined_vars as vars;
 /**
  * Foo.
  *
- * @since 16xxxx Initial release.
+60624.34776 Initial release.
  */
 class Foo extends SCoreClasses\SCore\Base\Core
 {

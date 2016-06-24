@@ -25,7 +25,7 @@ use function get_defined_vars as vars;
 /**
  * Pseudo-static facades.
  *
- * @since 16xxxx Initial release.
+60624.34776 Initial release.
  */
 abstract class Facades
 {

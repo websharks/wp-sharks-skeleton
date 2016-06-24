@@ -25,23 +25,23 @@ use function get_defined_vars as vars;
 /**
  * App.
  *
- * @since 16xxxx Initial release.
+60624.34776 Initial release.
  */
 class App extends SCoreClasses\App
 {
     /**
      * Version.
      *
-     * @since 16xxxx
+60624.34776
      *
      * @type string Version.
      */
-    const VERSION = '160606.82769'; //v//
+    const VERSION = '160624.34776'; //v//
 
     /**
      * Constructor.
      *
-     * @since 16xxxx Initial release.
+60624.34776 Initial release.
      *
      * @param array $instance Instance args.
      */
@@ -60,6 +60,7 @@ class App extends SCoreClasses\App
                     '§is_pro'          => false,
                     '§in_wp'           => false,
                     '§is_network_wide' => false,
+
                     '§type'            => '',
                     '§file'            => '',
                 */
@@ -67,14 +68,13 @@ class App extends SCoreClasses\App
 
             '©brand' => [
                 /*
-                    '©text_domain' => '',
-                    '©slug'        => '',
-                    '©var'         => '',
                     '©name'        => '',
                     '©acronym'     => '',
-                    '©prefix'      => '',
 
-                    '§action_base' => '',
+                    '©slug'        => '',
+                    '©text_domain' => '',
+                    '©var'         => '',
+
                     '§domain'      => '',
                     '§domain_path' => '',
                 */
@@ -160,7 +160,7 @@ class App extends SCoreClasses\App
     /**
      * Early hook setup handler.
      *
-     * @since 16xxxx Initial release.
+60624.34776 Initial release.
      */
     protected function onSetupEarlyHooks()
     {
@@ -170,7 +170,7 @@ class App extends SCoreClasses\App
     /**
      * Other hook setup handler.
      *
-     * @since 16xxxx Initial release.
+60624.34776 Initial release.
      */
     protected function onSetupOtherHooks()
     {

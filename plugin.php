@@ -4,17 +4,17 @@
  *
  * @wp-plugin
  *
- * Version: 160606.82769
+ * Version: 160624.34776
  * Text Domain: skeleton
  * Plugin Name: Skeleton Pro
  *
  * Author: WP Sharks™
- * Author URI: https://wpsharks.com/
+ * Author URI: https://wpsharks.com
  *
  * License: GPL-3.0+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
- * Plugin URI: https://wpsharks.com/product/skeleton/
+ * Plugin URI: https://wpsharks.com/product/skeleton
  * Description: WP Sharks™ plugin skeleton.
  */
 // PHP v5.2 compatible.

@@ -1,16 +1,16 @@
-=== WP Sharks Skeleton ===
+=== Skeleton ===
 
-Stable tag: 160606.82769
+Stable tag: 160624.34776
 
-Tested up to: 4.5.2
-Requires at least: 4.5.2
+Tested up to: 4.5.3
+Requires at least: 4.5.3
 
 Text Domain: skeleton
 
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Donate: https://wpsharks.com/donate/
+Donate: https://wpsharks.com/donate
 Contributors: wpsharks, JasWSInc, raamdev, KristineDS, reedyseth, sitegeek
 Tags: wpsharks, skeleton
 
