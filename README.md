@@ -1,4 +1,4 @@
-## Skeleton
+## WP Sharks Skeleton
 
 WP Sharks™ plugin skeleton.
 
