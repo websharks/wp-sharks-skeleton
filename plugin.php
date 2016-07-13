@@ -4,7 +4,7 @@
  *
  * @wp-plugin
  *
- * Version: 160630.69918
+ * Version: 160713.40762
  * Text Domain: skeleton
  * Plugin Name: Skeleton Pro
  *
@@ -14,7 +14,7 @@
  * License: GPL-3.0+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
- * Plugin URI: https://wpsharks.com/product/skeleton
+ * Plugin URI: https://wpsharks.com/product/skeleton-pro
  * Description: WP Sharks™ plugin skeleton.
  */
 // PHP v5.2 compatible.

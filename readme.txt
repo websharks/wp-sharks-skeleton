@@ -1,6 +1,6 @@
 === WP Sharks Skeleton ===
 
-Stable tag: 160630.69918
+Stable tag: 160713.40762
 
 Tested up to: 4.5.3
 Requires at least: 4.5.3

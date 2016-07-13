@@ -23,7 +23,7 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * App.
+ * App class.
  *
  * @since 160624.36295 Initial release.
  */
@@ -36,7 +36,7 @@ class App extends SCoreClasses\App
      *
      * @type string Version.
      */
-    const VERSION = '160630.69918'; //v//
+    const VERSION = '160713.40762'; //v//
 
     /**
      * Constructor.
@@ -49,10 +49,12 @@ class App extends SCoreClasses\App
     {
         $instance_base = [
             '©di' => [
-                '©default_rule' => [
-                    'new_instances' => [
+                /*
+                    '©default_rule' => [
+                        'new_instances' => [
+                        ],
                     ],
-                ],
+                */
             ],
 
             '§specs' => [
@@ -61,27 +63,35 @@ class App extends SCoreClasses\App
                     '§in_wp'           => false,
                     '§is_network_wide' => false,
 
-                    '§type'            => '',
-                    '§file'            => '',
+                    '§type'            => 'plugin',
+                    '§file'            => dirname(__FILE__, 4).'/plugin.php',
                 */
             ],
-
             '©brand' => [
                 /*
-                    '©name'        => '',
                     '©acronym'     => '',
+                    '©name'        => '',
 
                     '©slug'        => '',
-                    '©text_domain' => '',
                     '©var'         => '',
 
-                    '§domain'      => '',
-                    '§domain_path' => '',
+                    '©short_slug'  => '',
+                    '©short_var'   => '',
+
+                    '©text_domain' => '',
                 */
             ],
 
-            '§pro_option_keys' => [],
-            '§default_options' => [],
+            '§pro_option_keys' => [
+                /*
+                    '[key]',
+                */
+            ],
+            '§default_options' => [
+                /*
+                    '[key]' => '[value]',
+                */
+            ],
 
             '§conflicts' => [
                 '§plugins' => [
