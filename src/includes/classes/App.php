@@ -1,4 +1,10 @@
 <?php
+/**
+ * Application.
+ *
+ * @author @wpsharks
+ * @copyright WP Sharks™
+ */
 declare (strict_types = 1);
 namespace WebSharks\WpSharks\Skeleton\Classes;
 
@@ -23,25 +29,25 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * App class.
+ * Application.
  *
- * @since 160624.36295 Initial release.
+ * @since $%v Initial release.
  */
 class App extends SCoreClasses\App
 {
     /**
      * Version.
      *
-     * @since 160624.36295
+     * @since $%v
      *
-     * @type string Version.
+     * @var string Version.
      */
-    const VERSION = '160715.31930'; //v//
+    const VERSION = '160829.8388'; //v//
 
     /**
      * Constructor.
      *
-     * @since 160624.34776 Initial release.
+     * @since $%v Initial release.
      *
      * @param array $instance Instance args.
      */
@@ -59,7 +65,6 @@ class App extends SCoreClasses\App
 
             '§specs' => [
                 /*
-                    '§is_pro'          => false,
                     '§in_wp'           => false,
                     '§is_network_wide' => false,
 
@@ -170,20 +175,28 @@ class App extends SCoreClasses\App
     /**
      * Early hook setup handler.
      *
-     * @since 160624.34776 Initial release.
+     * @since $%v Initial release.
      */
     protected function onSetupEarlyHooks()
     {
         parent::onSetupEarlyHooks();
+
+        // Uncomment to enable extra install/uninstall handlers.
+        // s::addAction('vs_upgrades', [$this->Utils->Installer, 'onVsUpgrades']);
+        // s::addAction('other_install_routines', [$this->Utils->Installer, 'onOtherInstallRoutines']);
+        // s::addAction('other_uninstall_routines', [$this->Utils->Uninstaller, 'onOtherUninstallRoutines']);
     }
 
     /**
      * Other hook setup handler.
      *
-     * @since 160624.34776 Initial release.
+     * @since $%v Initial release.
      */
     protected function onSetupOtherHooks()
     {
         parent::onSetupOtherHooks();
+
+        // Uncomment this line to enable a default menu page template.
+        // add_action('admin_menu', [$this->Utils->MenuPage, 'onAdminMenu']);
     }
 }

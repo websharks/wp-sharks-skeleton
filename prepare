@@ -1,0 +1,101 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Prepare.
+ *
+ * @author @wpsharks
+ * @copyright WP Sharks™
+ */
+// @codingStandardsIgnoreFile
+
+/*
+ * Validation.
+ */
+if (PHP_SAPI !== 'cli') {
+    exit('CLI access only.');
+} elseif (empty($argv[1])) {
+    exit('Expecting project title.');
+} elseif (mb_stripos(basename(__DIR__), 'skeleton') !== false) {
+    exit('Expecting a copy of the skeleton; not the skeleton itself.');
+}
+/*
+ * Change dir.
+ */
+chdir(__DIR__);
+
+/*
+ * Clean.
+ */
+`rm -rf .git`;
+`rm -rf phings`;
+`rm -f .gitmodules`;
+
+`rm -rf src/vendor`;
+`rm -f composer.lock`;
+
+`rm -f CHANGELOG.md`;
+
+`rm -rf src/includes/translations`;
+
+`rm -f prepare`; // Self deletion.
+
+/*
+ * Prepare project files.
+ * Working w/ a clean directory.
+ */
+$dev_username = trim(`git config user.name`);
+$dev_username = $dev_username ?: 'wpsharks';
+
+$project_title = trim($argv[1]);
+if (!preg_match('/^[A-Z]/u', $project_title)) {
+    $project_title = mb_convert_case($project_title, MB_CASE_TITLE);
+} // ↑ Only if the developer didn't provide a proper title.
+$project_title = preg_replace('/\s+(?:Lite|Pro)$/ui', '', $project_title);
+
+$project_sub_namespace_name = preg_replace('/[^a-z0-9]+/ui', '', $project_title);
+$project_slug               = mb_strtolower(preg_replace('/[^a-z0-9]+/ui', '-', $project_title));
+$project_var                = mb_strtolower(preg_replace('/[^a-z0-9]+/ui', '_', $project_title));
+
+foreach (dir_recursive_regex(__DIR__, '/\.(?:php|bash|js|json|css|xml|html|txt|md|props|cfg)$/ui') as $_Resource) {
+    if (!$_Resource->isFile()) {
+        continue; // Files only.
+    }
+    $_contents = file_get_contents($_Resource->getPathname());
+
+    $_contents = str_replace('* @since $%v', '* @since $v', $_contents);
+    $_contents = str_replace('* @author @wpsharks', '* @author @'.$dev_username, $_contents);
+
+    $_contents = str_replace('WpSharks\\Skeleton', 'WpSharks\\'.$project_sub_namespace_name, $_contents);
+    $_contents = str_replace('WpSharks\\\\Skeleton', 'WpSharks\\\\'.$project_sub_namespace_name, $_contents);
+    $_contents = str_replace('WpSharksSkeleton', 'WpSharks'.$project_sub_namespace_name, $_contents);
+
+    $_contents = str_replace('wp_sharks_skeleton', $project_var, $_contents);
+    $_contents = str_replace('wp-sharks-skeleton', $project_slug, $_contents);
+    $_contents = str_replace('wpsharks.com/product/skeleton', 'wpsharks.com/product/'.$project_slug, $_contents);
+    $_contents = str_replace('Text Domain: skeleton', 'Text Domain: '.$project_slug, $_contents);
+
+    $_contents = str_replace('Skeleton', $project_title, $_contents);
+    $_contents = str_replace('skeleton', $project_slug, $_contents);
+
+    file_put_contents($_Resource->getPathname(), $_contents);
+} // unset($_Resource, $_contents); // Housekeeping.
+
+file_put_contents(__DIR__.'/CHANGELOG.md', '## $v'."\n\n".'- Initial release.'."\n");
+
+function dir_recursive_regex(string $dir, string $regex): \RegexIterator
+{
+    $DirIterator          = new \RecursiveDirectoryIterator($dir, \FilesystemIterator::KEY_AS_PATHNAME | \FilesystemIterator::CURRENT_AS_SELF | \FilesystemIterator::SKIP_DOTS | \FilesystemIterator::UNIX_PATHS);
+    $IteratorIterator     = new \RecursiveIteratorIterator($DirIterator, \RecursiveIteratorIterator::CHILD_FIRST);
+    return $RegexIterator = new \RegexIterator($IteratorIterator, $regex, \RegexIterator::MATCH, \RegexIterator::USE_KEY);
+}
+/*
+ * Initialize repo.
+ */
+`git init`; // Initialize new Git repo.
+`git submodule add https://github.com/websharks/phings.git phings`;
+
+/*
+ * Confirmation & instructions.
+ */
+echo 'Project preparations complete.'."\n";
+echo 'To begin work, open: src/includes/classes/App.php'."\n";

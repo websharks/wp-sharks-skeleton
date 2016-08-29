@@ -1,4 +1,10 @@
 <?php
+/**
+ * Uninstaller.
+ *
+ * @author @wpsharks
+ * @copyright WP Sharks™
+ */
 // PHP v5.2 compatible.
 
 if (!defined('WPINC')) {

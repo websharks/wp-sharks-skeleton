@@ -1,16 +1,7 @@
-## v160715.31930
+## v160829.8388
 
-- Updating to latest WPS Core.
-
-## v160713.40762
-
-- Updating to latest WPS Core.
-- Enhancing default `App{}` class.
-
-## v160624.34776
-
-- Updating to latest WPS Core.
-
-## v160601.63311
-
-- Initial release.
+- Adding extra install/uninstall starter files.
+- Enhancing menu page utility with better examples.
+- `@since` tags now use `$%v`, which survives a build so they can be handled via `./prepare`.
+- Enhancing `./prepare` script so that it can properly convert temporary `$%v` tokens into `$v`.
+- Updating `.build.props` with Slack channel name for release/upload notifications.

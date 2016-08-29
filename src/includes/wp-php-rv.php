@@ -1,4 +1,10 @@
 <?php
+/**
+ * WP PHP RV.
+ *
+ * @author @wpsharks
+ * @copyright WP Sharks™
+ */
 // PHP v5.2 compatible.
 
 if (!defined('WPINC')) {
@@ -9,10 +15,11 @@ $GLOBALS['wp_php_rv'] = array(
 
     'min'        => '7.0.4', //php-required-version//
     'bits'       => 64, //php-required-bits//
+    'functions'  => array(), //php-required-functions//
     'extensions' => array(), //php-required-extensions//
 
     'wp' => array(
-        'min' => '4.5.3', //wp-required-version//
+        'min' => '0.0.0', //wp-required-version//
     ),
 ); // The following keys are for back compat. only.
 $GLOBALS['wp_php_rv']['rv'] = $GLOBALS['wp_php_rv']['min'];

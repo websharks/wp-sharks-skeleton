@@ -1,12 +1,12 @@
 <?php
 /**
- * Facades.
+ * VS upgrades.
  *
  * @author @wpsharks
  * @copyright WP Sharks™
  */
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\Skeleton\Classes\Base;
+namespace WebSharks\WpSharks\Skeleton\Classes\Utils;
 
 use WebSharks\WpSharks\Skeleton\Classes;
 use WebSharks\WpSharks\Skeleton\Interfaces;
@@ -29,11 +29,19 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * Facades.
+ * VS upgrades.
  *
- * @since $%v
+ * @since $%v VS upgrades.
  */
-abstract class Facades
+class VsUpgrades extends SCoreClasses\SCore\Base\Core
 {
-    use Traits\Facades\Foo;
+    /**
+     * VS upgrade handler.
+     *
+     * @since $%v VS upgrade handler.
+     */
+    public function fromLt000000()
+    {
+        // Do something here.
+    }
 }

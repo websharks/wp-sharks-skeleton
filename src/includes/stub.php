@@ -1,4 +1,10 @@
 <?php
+/**
+ * Stub.
+ *
+ * @author @wpsharks
+ * @copyright WP Sharks™
+ */
 declare (strict_types = 1);
 namespace WebSharks\WpSharks\Skeleton;
 

@@ -1,9 +1,9 @@
-=== WP Sharks Skeleton ===
+=== Skeleton ===
 
-Stable tag: 160715.31930
+Stable tag: 160829.8388
 
-Tested up to: 4.5.3
-Requires at least: 4.5.3
+Tested up to: 0.0.0
+Requires at least: 0.0.0
 
 Text Domain: skeleton
 

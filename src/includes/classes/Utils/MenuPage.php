@@ -1,6 +1,6 @@
 <?php
 /**
- * Foo utils.
+ * Menu page utils.
  *
  * @author @wpsharks
  * @copyright WP Sharks™
@@ -29,42 +29,31 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * Foo utils.
+ * Menu page utils.
  *
  * @since $%v Initial release.
  */
-class Foo extends SCoreClasses\SCore\Base\Core
+class MenuPage extends SCoreClasses\SCore\Base\Core
 {
     /**
-     * Example utility.
-     *
-     * @since $%v Initial release.
-     *
-     * @param array $args Input args.
-     *
-     * @return string Return value.
-     */
-    public function bar(array $args = []): string
-    {
-        $default_args = [
-            'one'   => 1,
-            'two'   => 2,
-            'three' => 3,
-        ];
-        $args += $default_args;
-
-        // Do something here.
-
-        return ''; // Returns a string.
-    }
-
-    /**
-     * On `hook_name` hook.
+     * On `admin_menu` hook.
      *
      * @since $%v Initial release.
      */
-    public function onHookName()
+    public function onAdminMenu()
     {
-        // Do something here.
+        s::addMenuPageItem([
+            'parent_page'   => 'options-general.php',
+            'menu_title'    => $this->App->Config->©brand['©name'],
+            'template_file' => 'admin/menu-pages/options/default.php',
+
+            'tabs' => [
+                'default' => sprintf(__('%1$s', 'wp-sharks-skeleton'), esc_html($this->App->Config->©brand['©name'])),
+                'restore' => [
+                    'label' => __('Restore Default Options', 'wp-sharks-skeleton'),
+                    'url'   => s::restoreDefaultOptionsUrl(), 'onclick' => 'confirm',
+                ],
+            ],
+        ]);
     }
 }

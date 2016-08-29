@@ -1,12 +1,12 @@
 <?php
 /**
- * Facades.
+ * Uninstall utils.
  *
  * @author @wpsharks
  * @copyright WP Sharks™
  */
 declare (strict_types = 1);
-namespace WebSharks\WpSharks\Skeleton\Classes\Base;
+namespace WebSharks\WpSharks\Skeleton\Classes\Utils;
 
 use WebSharks\WpSharks\Skeleton\Classes;
 use WebSharks\WpSharks\Skeleton\Interfaces;
@@ -29,11 +29,23 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * Facades.
+ * Uninstall utils.
  *
- * @since $%v
+ * @since $%v Initial release.
  */
-abstract class Facades
+class Uninstaller extends SCoreClasses\SCore\Base\Core
 {
-    use Traits\Facades\Foo;
+    /**
+     * Other uninstall routines.
+     *
+     * @since $%v Initial release.
+     *
+     * @param int $site_counter Site counter.
+     */
+    public function onOtherUninstallRoutines(int $site_counter)
+    {
+        // Do something here.
+        // $this->uninstallSomething($site_counter);
+        // i.e., Create protected methods in this class.
+    }
 }

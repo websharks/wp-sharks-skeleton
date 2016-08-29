@@ -1,7 +1,7 @@
 {
   "name": "websharks/wp-sharks-skeleton",
   "homepage": "https://github.com/websharks/wp-sharks-skeleton",
-  "description": "WP Sharks™ plugin skeleton.",
+  "description": "Skeleton Pro plugin for WordPress.",
   "keywords": ["websharks", "wpsharks", "skeleton"],
 
   "type": "project",
@@ -17,7 +17,7 @@
     "role": "developer"
   }, {
     "name": "raamdev",
-    "homepage": "http://raam.org",
+    "homepage": "https://raamdev.com",
     "role": "developer"
   }],
 

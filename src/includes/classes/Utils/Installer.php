@@ -1,6 +1,6 @@
 <?php
 /**
- * Foo utils.
+ * Install utils.
  *
  * @author @wpsharks
  * @copyright WP Sharks™
@@ -29,42 +29,39 @@ use function assert as debug;
 use function get_defined_vars as vars;
 
 /**
- * Foo utils.
+ * Install utils.
  *
  * @since $%v Initial release.
  */
-class Foo extends SCoreClasses\SCore\Base\Core
+class Installer extends SCoreClasses\SCore\Base\Core
 {
     /**
-     * Example utility.
+     * Other install routines.
      *
      * @since $%v Initial release.
      *
-     * @param array $args Input args.
-     *
-     * @return string Return value.
+     * @param array $history Install history.
      */
-    public function bar(array $args = []): string
+    public function onOtherInstallRoutines(array $history)
     {
-        $default_args = [
-            'one'   => 1,
-            'two'   => 2,
-            'three' => 3,
-        ];
-        $args += $default_args;
-
         // Do something here.
-
-        return ''; // Returns a string.
+        // $this->installSomething();
+        // i.e., Create protected methods in this class.
     }
 
     /**
-     * On `hook_name` hook.
+     * Version-specific upgrades.
      *
      * @since $%v Initial release.
+     *
+     * @param array $history Install history.
      */
-    public function onHookName()
+    public function onVsUpgrades(array $history)
     {
         // Do something here.
+        // VS upgrades run 'before' any other installer.
+        // if (version_compare($history['last_version'], '000000', '<')) {
+        //     $this->App->Utils->VsUpgrades->fromLt000000();
+        // }
     }
 }
